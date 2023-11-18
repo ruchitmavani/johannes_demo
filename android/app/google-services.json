@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "796288686477",
+    "project_id": "johannes-demo-login",
+    "storage_bucket": "johannes-demo-login.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:796288686477:android:ff246aca7e6d4d111805c4",
+        "android_client_info": {
+          "package_name": "com.demo.johannes_demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxH3DLfIibihO0ol5x4uYkXHbBIuWyxOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
