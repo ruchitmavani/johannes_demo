@@ -36,8 +36,6 @@ class SetupSignInViewModel extends StateNotifier<EmailState> {
 
   Future<void> signIn() async {
     final fireAuth = FirebaseAuth.instance;
-    final fireStorage = FirebaseAuth.instance;
-
     final email = state.emailAddress;
     final password = state.password;
     state = state.copyWith(isLoading: true);
@@ -47,7 +45,7 @@ class SetupSignInViewModel extends StateNotifier<EmailState> {
       late UserCredential userCred;
       if (await isEmailExists(email)) {
         userCred = await fireAuth.signInWithEmailAndPassword(
-            email: email, password: password);
+            email: email, password: password,);
       } else {
         userCred = await fireAuth.createUserWithEmailAndPassword(
             email: email, password: password,);
@@ -118,14 +116,13 @@ class SetupSignInViewModel extends StateNotifier<EmailState> {
   }
 
   void _onSignInFailed({String? message}) {
-    print('failed signin called');
     state = state.copyWith(isLoading: false);
 
     if (message != null) {
       ModalHelper.showErrorDialog(
-        title: "Oops!",
+        title: 'Oops!',
         body: message,
-        primaryButton: ModalButtonProps(label: "Dismiss"),
+        primaryButton: ModalButtonProps(label: 'Dismiss'),
       );
     }
   }

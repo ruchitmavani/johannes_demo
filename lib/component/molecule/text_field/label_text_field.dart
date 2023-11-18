@@ -175,16 +175,16 @@ class _LabelTextFieldState extends State<LabelTextField> {
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
                 borderSide:
-                    const BorderSide(width: 2, color: ColorPallet.black),
+                    const BorderSide(width: 2),
               ),
               disabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
                 borderSide: BorderSide(
-                    width: 2, color: ColorPallet.subText.withOpacity(0.2)),
+                    width: 2, color: ColorPallet.subText.withOpacity(0.2),),
               ),
               errorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: const BorderSide(width: 2, color: ColorPallet.black),
+                borderSide: const BorderSide(width: 2),
               ),
               focusedErrorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),

@@ -1,7 +1,6 @@
 // Flutter imports:
 
 import 'package:flutter/material.dart';
-
 // Project imports:
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:johannes_demo/component/molecule/button/rounded_button.dart';
@@ -11,12 +10,9 @@ import 'package:johannes_demo/helper/modal_helper.dart';
 
 class ErrorModal extends HookConsumerWidget {
   const ErrorModal({
-    super.key,
-    required this.title,
-    required this.description,
+    required this.title, required this.description, required this.pop, super.key,
     this.primaryButton,
     this.secondaryButton,
-    required this.pop,
   });
 
   final String title;
@@ -51,7 +47,7 @@ class ErrorModal extends HookConsumerWidget {
           ),
           const SizedBox(height: 10),
           RoundedButton(
-            text: primaryButton?.label ?? "Dismiss",
+            text: primaryButton?.label ?? 'Dismiss',
             onTap: () async {
               if (primaryButton?.extraAction != null) {
                 await primaryButton!.extraAction!();
@@ -81,7 +77,7 @@ class ErrorModal extends HookConsumerWidget {
                   ),
                 ),
               ),
-            )
+            ),
         ],
       ),
     );

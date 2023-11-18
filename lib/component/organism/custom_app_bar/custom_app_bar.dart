@@ -27,20 +27,21 @@ class CustomAppBar extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              leftActionWidget != null
-                  ? leftActionWidget!
-                  : GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 20,
-                        ),
-                        child: Container(
-                          alignment: Alignment.center,
-                          height: 40,
-                          child: const Icon(
+              if (leftActionWidget != null)
+                leftActionWidget!
+              else
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                    ),
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 40,
+                      child: const Icon(
                             FontAwesomeIconData.arrowLeft,
                             size: 18,
                             color: ColorPallet.black,
@@ -59,7 +60,7 @@ class CustomAppBar extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(right: 8),
                     child: Icon(
-                      titleIcon!,
+                      titleIcon,
                       size: 12,
                       color: ColorPallet.black,
                     ),
@@ -67,9 +68,9 @@ class CustomAppBar extends StatelessWidget {
                 Text(
                   title!,
                   style: CustomTextStyle.smallBold,
-                )
+                ),
               ],
-            )
+            ),
         ],
       ),
     );

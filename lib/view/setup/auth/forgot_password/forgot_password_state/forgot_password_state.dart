@@ -6,8 +6,8 @@ part 'forgot_password_state.g.dart';
 @freezed
 class ForgotPasswordState with _$ForgotPasswordState {
   const factory ForgotPasswordState({
-    @Default(false) bool isLoading,
     required String emailAddress,
+    @Default(false) bool isLoading,
   }) = _ForgotPasswordState;
 
   factory ForgotPasswordState.fromJson(Map<String, dynamic> json) =>

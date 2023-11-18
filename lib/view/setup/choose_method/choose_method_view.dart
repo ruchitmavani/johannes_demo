@@ -7,7 +7,6 @@ import 'package:johannes_demo/main.dart';
 import 'package:johannes_demo/services/navigator_service/navigator_service.dart';
 import 'package:johannes_demo/view/setup/auth/email/email_auth_view.dart';
 import 'package:johannes_demo/view/setup/auth/phone/phone_view.dart';
-import 'package:johannes_demo/view/setup/complete_profile/complete_profile_view.dart';
 
 class ChooseMethodView extends StatelessWidget {
   const ChooseMethodView({super.key});
@@ -48,7 +47,7 @@ class ChooseMethodView extends StatelessWidget {
               _Card(
                   iconData: FontAwesomeIconData.phone,
                   name: 'Continue with Phone',
-                  onTap: navToPhoneAuthView),
+                  onTap: navToPhoneAuthView,),
             ],
           ),
         ),
@@ -59,7 +58,7 @@ class ChooseMethodView extends StatelessWidget {
 
 class _Card extends StatelessWidget {
   const _Card(
-      {required this.iconData, required this.name, super.key, this.onTap});
+      {required this.iconData, required this.name, this.onTap,});
 
   final String name;
   final IconData iconData;
@@ -70,11 +69,11 @@ class _Card extends StatelessWidget {
     return ScaleButton(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 15),
+        padding: const EdgeInsets.symmetric(vertical: 15),
         decoration: BoxDecoration(
             color: ColorPallet.white,
             borderRadius: BorderRadius.circular(8),
-            border: Border.all(width: 2)),
+            border: Border.all(width: 2),),
         child: Row(
           children: [
             Expanded(

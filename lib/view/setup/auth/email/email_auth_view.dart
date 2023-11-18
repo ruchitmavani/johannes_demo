@@ -88,6 +88,7 @@ class EmailAuthView extends HookConsumerWidget {
                       if (value.length < 8) {
                         return 'Minimum 8 characters required';
                       }
+                      return null;
                     },
                     prefixIcon: const Icon(
                       FontAwesomeIconData.key,

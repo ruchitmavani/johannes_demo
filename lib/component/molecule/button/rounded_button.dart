@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:johannes_demo/component/atom/scale_button/scale_button.dart';
+import 'package:johannes_demo/constants/color_constants.dart';
 import 'package:johannes_demo/constants/text_constants.dart';
-
-import '../../../constants/color_constants.dart';
 
 class RoundedButton extends StatelessWidget {
   const RoundedButton({
-    super.key,
+    required this.onTap, super.key,
     this.text = '',
     this.icon,
     this.disabled = false,
-    required this.onTap,
     this.color,
     this.textStyle,
     this.isLoading = false,

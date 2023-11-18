@@ -3,7 +3,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:johannes_demo/constants/enums.dart';
 
 part 'app_user_model.freezed.dart';
-
 part 'app_user_model.g.dart';
 
 @freezed

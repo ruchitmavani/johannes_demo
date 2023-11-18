@@ -101,20 +101,20 @@ class BorderTextField extends StatelessWidget {
         errorMaxLines: 1,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(width: 2, color: ColorPallet.black),
+          borderSide: const BorderSide(width: 2),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(width: 2, color: ColorPallet.black),
+          borderSide: const BorderSide(width: 2),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(width: 2, color: ColorPallet.black),
+          borderSide: const BorderSide(width: 2),
         ),
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide:
-              BorderSide(width: 2, color: ColorPallet.grey),
+              const BorderSide(width: 2, color: ColorPallet.grey),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),

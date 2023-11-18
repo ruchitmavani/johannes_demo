@@ -4,7 +4,7 @@ import 'package:johannes_demo/constants/text_constants.dart';
 
 class OutlinedRoundedButton extends StatelessWidget {
   const OutlinedRoundedButton(
-      {super.key, required this.text, this.onTap, this.color, this.textStyle,});
+      {required this.text, super.key, this.onTap, this.color, this.textStyle,});
 
   final String text;
   final Color? color;

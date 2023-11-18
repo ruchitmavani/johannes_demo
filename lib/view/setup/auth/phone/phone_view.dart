@@ -33,11 +33,10 @@ final _inputDecoration = InputDecoration(
   errorMaxLines: 1,
   border: OutlineInputBorder(
     borderRadius: BorderRadius.circular(30),
-    borderSide: const BorderSide(width: 2,color: Colors.black)
-  ),
+    borderSide: const BorderSide(width: 2),),
   enabledBorder: OutlineInputBorder(
     borderRadius: BorderRadius.circular(30),
-    borderSide: const BorderSide(width: 2,color: Colors.black),
+    borderSide: const BorderSide(width: 2),
   ),
   focusedBorder: OutlineInputBorder(
     borderRadius: BorderRadius.circular(30),
@@ -122,7 +121,7 @@ class PhoneView extends HookConsumerWidget {
                       const Icon(
                         Icons.edit,
                         size: 18,
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -143,10 +142,8 @@ class PhoneView extends HookConsumerWidget {
                           otpBoxHeight: 45,
                           otpBoxWidth: 45,
                           otpBoxRadius: 25,
-                          hasTextBorderColor: ColorPallet.black,
                           defaultBorderColor: ColorPallet.grey,
                           otpBoxColor: ColorPallet.background,
-                          highlightColor: ColorPallet.black,
                           highlight: true,
                           isCupertino: Platform.isIOS,
                           otpTextStyle: CustomTextStyle.large
@@ -200,7 +197,7 @@ class PhoneView extends HookConsumerWidget {
                         phoneViewModel.select((value) => value.isOtpSent),
                       )
                         ? RoundedButton(
-                            text: "Verify ",
+                            text: 'Verify ',
                             disabled: !ref.watch(
                               phoneViewModel
                                   .select((value) => value.otp.length == 6),
@@ -216,7 +213,7 @@ class PhoneView extends HookConsumerWidget {
                             },
                           )
                         : RoundedButton(
-                            text: "Send Otp",
+                            text: 'Send Otp',
                             disabled: ref.watch(
                               phoneViewModel.select((value) {
                                 return (phoneController.value?.isValid() ==

@@ -6,7 +6,6 @@ import 'package:johannes_demo/component/organism/full_screen_overlay.dart/modal_
 import 'package:johannes_demo/component/organism/modal_overlay/modal_overlay.dart';
 import 'package:johannes_demo/main.dart';
 import 'package:johannes_demo/services/navigator_service/navigator_service.dart';
-import 'package:johannes_demo/view/setup/complete_profile/complete_profile_view.dart';
 
 class ModalButtonProps {
   ModalButtonProps({required this.label, this.extraAction});
@@ -128,7 +127,7 @@ class ModalHelper {
     );
 
     await Navigator.of(
-            locator.get<NavigatorService>().navigatorKey.currentContext!)
+            locator.get<NavigatorService>().navigatorKey.currentContext!,)
         .push(networkRoute!);
   }
 
@@ -136,7 +135,7 @@ class ModalHelper {
     if (networkRoute != null) {
       if (networkRoute!.isActive) {
         Navigator.of(
-                locator.get<NavigatorService>().navigatorKey.currentContext!)
+                locator.get<NavigatorService>().navigatorKey.currentContext!,)
             .removeRoute(networkRoute!);
       }
     }
@@ -161,6 +160,6 @@ class ModalHelper {
 
     showErrorDialog(
         title: "Something went wrong!",
-        body: "there is some issue on our side, we are working hard on it");
+        body: "there is some issue on our side, we are working hard on it",);
   }
 }

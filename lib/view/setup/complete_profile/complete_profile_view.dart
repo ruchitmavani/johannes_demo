@@ -189,10 +189,11 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
 
   Future<void> _selectDate() async {
     final picked = await showDatePicker(
-        context: context,
-        initialDate: DateTime.now(),
-        firstDate: DateTime(1900),
-        lastDate: DateTime.now());
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(1900),
+      lastDate: DateTime.now(),
+    );
     if (picked != null && picked != birthDate) {
       _dateController.text = DateFormat('dd-MMM-yyyy').format(picked);
       birthDate = picked;
@@ -280,6 +281,7 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                         if (value == null || value.isEmpty) {
                           return 'Name is Require';
                         }
+                        return null;
                       },
                     ),
                     Text('Gender', style: CustomTextStyle.main),
@@ -301,20 +303,21 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                                         setState(() {
                                           gender = value;
                                         });
-                                      },
-                                      fillColor: MaterialStateProperty
-                                          .resolveWith<Color>(
-                                              (Set<MaterialState> states) {
-                                        return ColorPallet.black;
-                                      }),
-                                    ),
-                                    Text(
-                                      Gender.values[index].name,
-                                      style: CustomTextStyle.smallExtraBold,
-                                    )
-                                  ],
-                                ),
-                              )),
+                                },
+                                fillColor:
+                                    MaterialStateProperty.resolveWith<Color>(
+                                        (Set<MaterialState> states) {
+                                  return ColorPallet.black;
+                                }),
+                              ),
+                              Text(
+                                Gender.values[index].name,
+                                style: CustomTextStyle.smallExtraBold,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ),
                     Text('Birth Date', style: CustomTextStyle.main),
                     const SizedBox(height: 5),
@@ -329,6 +332,7 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                             if (value == null || value.isEmpty) {
                               return 'Select Birthdate';
                             }
+                            return null;
                           },
                         ),
                       ),
@@ -352,7 +356,8 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                                       ),
                                     const SizedBox(width: 10),
                                     const CircularProgressIndicator(
-                                        color: ColorPallet.black),
+                                      color: ColorPallet.black,
+                                    ),
                                   ],
                                 ),
                               )
@@ -391,7 +396,8 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                                       locator
                                           .get<NavigatorService>()
                                           .removeAllAndPush(
-                                              const ProfileView());
+                                            const ProfileView(),
+                                          );
                                     }).then((value) {
                                       setState(() {
                                         isUserStoreInProgress = false;
@@ -430,8 +436,9 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                   padding: const EdgeInsets.all(20),
                   child: DecoratedBox(
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        boxShadow: const [BoxShadow()]),
+                      borderRadius: BorderRadius.circular(12),
+                      boxShadow: const [BoxShadow()],
+                    ),
                     child: ErrorModal(
                       title: 'Email is Not Verified',
                       description: 'please check inbox for verification mail',
@@ -447,7 +454,7 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                   ),
                 ),
               ),
-            )
+            ),
         ],
       ),
     );
